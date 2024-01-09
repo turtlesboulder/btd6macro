@@ -1,0 +1,1149 @@
+﻿[PMC Globals]|None||
+[PMC Code v5.4.1]|F7|Alt|1|Window,2,Fast,0,1,Input,-1,-1,1|1|Macro1
+Context=None|
+Groups=Start:1
+1|[Label]|start|1|0|Label|||||1|
+2|[Pause]||1|300|Sleep|||||2|
+3|EnterTrackSelect|_null := |1|0|Function|||||3|
+4|[Pause]||1|300|Sleep|||||4|
+5|[Assign Variable]|trackNumber := -1|1|0|Variable|Expression||||5|
+6|DetermineTrack|_null := trackNumber|1|0|Function|||||6|
+7|[Pause]||1|300|Sleep|||||7|
+8|SelectTrack|_null := trackNumber|1|0|Function|||||8|
+9|EnterTrack|_null := |1|0|Function|||||9|
+10|[Assign Variable]|outcome := 0|1|0|Variable|Expression||||10|
+11|TrackRouter|outcome := trackNumber|1|0|Function|||||11|
+12|Compare Variables|outcome = 1|1|0|If_Statement|||||12|
+13|CheckSuccess|_null := |1|0|Function|||||14|
+14|[End If]|EndIf|1|0|If_Statement|||||15|
+15|[Goto]|start|1|0|Goto|||||16|
+016|[MsgBox]|Track: %trackNumber%|1|0|MsgBox|0||||17|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|EnterTrackSelect()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|EnterTrackSelect|1|0|UserFunction|Local| / |||1|
+2|Move|842, 927, 0|1|100|Click|||||3|
+3|Left Click|Left, 1, |1|100|Click|||||5|
+4|[Pause]||1|500|Sleep|||||7|
+5|Move|1340, 959, 0|1|100|Click|||||8|
+6|Left Click|Left, 1, |1|100|Click|||||10|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|DetermineTrack()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|trackNumber|1|0|FuncParameter|ByRef||||1|
+2|[FunctionStart]|DetermineTrack|1|0|UserFunction|Local| / |||1|
+3|Random|trackNumber, 1, 12|1|0|Random|||||3|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|SelectTrack()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|trackNumber|1|0|FuncParameter|||||1|
+2|[FunctionStart]|SelectTrack|1|0|UserFunction|Local| / |||1|
+3|[Assign Variable]|currentPage := 2|1|0|Variable|Expression||||3|
+4|Continue, Continue, FoundX, FoundY, 0|365, 143, 442, 215, *20 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240104213958.png|1|0|ImageSearch||Window|||4|
+5|If Image/Pixel Found||1|0|If_Statement|||||6|
+6|[Assign Variable]|currentPage := 1|1|0|Variable|Expression||||8|
+7|[End If]|EndIf|1|0|If_Statement|||||9|
+8|[Assign Variable]|targetPage := 1|1|0|Variable|Expression||||10|
+9|Compare Variables|trackNumber >= 7|1|0|If_Statement|||||11|
+10|[Assign Variable]|targetPage := 2|1|0|Variable|Expression||||13|
+11|[End If]|EndIf|1|0|If_Statement|||||14|
+12|[Pause]||1|300|Sleep|||||15|
+13|Compare Variables|currentPage != targetPage|1|0|If_Statement|||||16|
+14|Move|1330, 989, 0|1|100|Click|||||18|
+15|Left Click|Left, 1, |1|100|Click|||||20|
+16|[End If]|EndIf|1|0|If_Statement|||||22|
+17|[Assign Variable]|clickPositionNumber := Mod(trackNumber, 6)|1|0|Variable|Expression||||23|
+18|Compare Variables|clickPositionNumber = 1|1|0|If_Statement|||||24|
+19|Move|536, 267, 0|1|100|Click|||||26|
+20|[End If]|EndIf|1|0|If_Statement|||||28|
+21|Compare Variables|clickPositionNumber = 2|1|0|If_Statement|||||29|
+22|Move|951, 286, 0|1|100|Click|||||31|
+23|[End If]|EndIf|1|0|If_Statement|||||33|
+24|Compare Variables|clickPositionNumber = 3|1|0|If_Statement|||||34|
+25|Move|1396, 280, 0|1|100|Click|||||36|
+26|[End If]|EndIf|1|0|If_Statement|||||38|
+27|Compare Variables|clickPositionNumber = 4|1|0|If_Statement|||||39|
+28|Move|532, 597, 0|1|100|Click|||||41|
+29|[End If]|EndIf|1|0|If_Statement|||||43|
+30|Compare Variables|clickPositionNumber = 5|1|0|If_Statement|||||44|
+31|Move|969, 571, 0|1|100|Click|||||46|
+32|[End If]|EndIf|1|0|If_Statement|||||48|
+33|Compare Variables|clickPositionNumber = 0|1|0|If_Statement|||||49|
+34|Move|1363, 586, 0|1|100|Click|||||51|
+35|[End If]|EndIf|1|0|If_Statement|||||53|
+36|[Pause]||1|500|Sleep|||||54|
+37|Left Click|Left, 1, |1|100|Click|||||55|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|EnterTrack()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|EnterTrack|1|0|UserFunction|Local| / |||1|
+2|[Pause]||1|300|Sleep|||||3|
+3|Move|643, 398, 0|1|100|Click|||||4|
+4|Left Click|Left, 1, |1|300|Click|||||6|
+5|Move|627, 584, 0|1|100|Click|||||8|
+6|Left Click|Left, 1, |1|300|Click|||||10|
+7|Move|1118, 732, 0|1|100|Click|||||12|
+8|Left Click|Left, 1, |1|300|Click|||||14|
+9|[Pause]||1|4000|Sleep|||||16|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|TrackRouter()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|trackNumber|1|0|FuncParameter|||||1|
+2|[FunctionStart]|TrackRouter|1|0|UserFunction|Local| / |||1|
+3|PressSpacebar|_null := |1|0|Function|||||3|
+4|[Assign Variable]|outcome := 0|1|0|Variable|Expression||||4|
+5|Compare Variables|trackNumber = 1|1|0|If_Statement|||||5|
+6|GlacialTrail|outcome := |1|0|Function|||||7|
+7|[End If]|EndIf|1|0|If_Statement|||||8|
+8|Compare Variables|trackNumber = 2|1|0|If_Statement|||||9|
+9|DarkDungeons|outcome := |1|0|Function|||||11|
+10|[End If]|EndIf|1|0|If_Statement|||||12|
+11|Compare Variables|trackNumber = 3|1|0|If_Statement|||||13|
+12|Sanctuary|outcome := |1|0|Function|||||15|
+13|[End If]|EndIf|1|0|If_Statement|||||16|
+14|Compare Variables|trackNumber = 4|1|0|If_Statement|||||17|
+15|Ravine|outcome := |1|0|Function|||||19|
+16|[End If]|EndIf|1|0|If_Statement|||||20|
+17|Compare Variables|trackNumber = 5|1|0|If_Statement|||||21|
+18|FloodedValley|outcome := |1|0|Function|||||23|
+19|[End If]|EndIf|1|0|If_Statement|||||24|
+20|Compare Variables|trackNumber = 6|1|0|If_Statement|||||25|
+21|Infernal|outcome := |1|0|Function|||||27|
+22|[End If]|EndIf|1|0|If_Statement|||||28|
+23|Compare Variables|trackNumber = 7|1|0|If_Statement|||||29|
+24|BloodyPuddles|outcome := |1|0|Function|||||31|
+25|[End If]|EndIf|1|0|If_Statement|||||32|
+26|Compare Variables|trackNumber = 8|1|0|If_Statement|||||33|
+27|Workshop|outcome := |1|0|Function|||||35|
+28|[End If]|EndIf|1|0|If_Statement|||||36|
+29|Compare Variables|trackNumber = 9|1|0|If_Statement|||||37|
+30|Quad|outcome := |1|0|Function|||||39|
+31|[End If]|EndIf|1|0|If_Statement|||||40|
+32|Compare Variables|trackNumber = 10|1|0|If_Statement|||||41|
+33|DarkCastle|outcome := |1|0|Function|||||43|
+34|[End If]|EndIf|1|0|If_Statement|||||44|
+35|Compare Variables|trackNumber = 11|1|0|If_Statement|||||45|
+36|MuddyPuddles|outcome := |1|0|Function|||||47|
+37|[End If]|EndIf|1|0|If_Statement|||||48|
+38|Compare Variables|trackNumber = 12|1|0|If_Statement|||||49|
+39|Ouch|outcome := |1|0|Function|||||51|
+40|[End If]|EndIf|1|0|If_Statement|||||52|
+41|[FuncReturn]|outcome|1|0|FuncReturn|||||53|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|GlacialTrail()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|GlacialTrail|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|187, 389, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|1382, 748, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||16|
+10|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||17|
+11|Return||1|0|Return|||||19|
+12|[End If]|EndIf|1|0|If_Statement|||||20|
+13|[Text]|a|1|200|SendRaw|||||21|
+14|Move|235, 558, 0|1|200|Click|||||23|
+15|Left Click|Left, 1, |1|200|Click|||||25|
+16|Left Click|Left, 1, |1|200|Click|||||27|
+17|[Text]|.|1|200|SendRaw|||||29|
+18|[Text]|/|1|200|SendRaw|||||31|
+19|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||33|
+20|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||34|
+21|Return||1|0|Return|||||36|
+22|[End If]|EndIf|1|0|If_Statement|||||37|
+23|Move|235, 558, 0|1|200|Click|||||38|
+24|Left Click|Left, 1, |1|200|Click|||||40|
+25|[Text]|.|1|200|SendRaw|||||42|
+26|[Text]|/|1|200|SendRaw|||||44|
+27|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||46|
+28|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||47|
+29|Return||1|0|Return|||||49|
+30|[End If]|EndIf|1|0|If_Statement|||||50|
+31|[Text]|j|1|200|SendRaw|||||51|
+32|Move|1419, 689, 0|1|200|Click|||||53|
+33|Left Click|Left, 1, |1|200|Click|||||55|
+34|Left Click|Left, 1, |1|200|Click|||||57|
+35|[Text]|/|1|200|SendRaw|||||59|
+36|[Text]|/|1|200|SendRaw|||||61|
+37|WaitUntilRoundNumber|_null := 20, RoundNumber|1|0|Function|||||63|
+38|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||64|
+39|Return||1|0|Return|||||66|
+40|[End If]|EndIf|1|0|If_Statement|||||67|
+41|Move|1419, 689, 0|1|200|Click|||||68|
+42|Left Click|Left, 1, |1|200|Click|||||70|
+43|[Text]|`,|1|200|SendRaw|||||72|
+44|[Text]|`,|1|200|SendRaw|||||74|
+45|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||76|
+46|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||77|
+47|Return||1|0|Return|||||79|
+48|[End If]|EndIf|1|0|If_Statement|||||80|
+49|Move|1419, 689, 0|1|200|Click|||||81|
+50|Left Click|Left, 1, |1|200|Click|||||83|
+51|[Text]|/|1|200|SendRaw|||||85|
+52|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||87|
+53|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||88|
+54|Return||1|0|Return|||||90|
+55|[End If]|EndIf|1|0|If_Statement|||||91|
+56|[Text]|e|1|200|SendRaw|||||92|
+57|Move|312, 537, 0|1|200|Click|||||94|
+58|Left Click|Left, 1, |1|200|Click|||||96|
+59|Left Click|Left, 1, |1|200|Click|||||98|
+60|[Text]|.|1|200|SendRaw|||||100|
+61|[Text]|.|1|200|SendRaw|||||102|
+62|[Text]|.|1|200|SendRaw|||||104|
+63|[Text]|.|1|200|SendRaw|||||106|
+64|[Text]|/|1|200|SendRaw|||||108|
+65|[Text]|/|1|200|SendRaw|||||110|
+66|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||112|
+67|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||113|
+68|Return||1|0|Return|||||115|
+69|[End If]|EndIf|1|0|If_Statement|||||116|
+70|[Text]|2|1|200|SendRaw|||||117|
+71|[FuncReturn]|1|1|0|FuncReturn|||||119|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|DarkDungeons()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|DarkDungeons|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|951, 948, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|231, 906, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|x|1|200|SendRaw|||||16|
+10|Move|1390, 911, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||22|
+13|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||23|
+14|Return||1|0|Return|||||25|
+15|[End If]|EndIf|1|0|If_Statement|||||26|
+16|[Text]|r|1|200|SendRaw|||||27|
+17|Move|353, 917, 0|1|200|Click|||||29|
+18|Left Click|Left, 1, |1|200|Click|||||31|
+19|Left Click|Left, 1, |1|200|Click|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|[Text]|/|1|200|SendRaw|||||37|
+22|DeselectTower|_null := |1|0|Function|||||39|
+23|Move|1407, 911, 0|1|200|Click|||||40|
+24|Left Click|Left, 1, |1|200|Click|||||42|
+25|[Text]|/|1|200|SendRaw|||||44|
+26|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||46|
+27|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||47|
+28|Return||1|0|Return|||||49|
+29|[End If]|EndIf|1|0|If_Statement|||||50|
+30|[Text]|v|1|200|SendRaw|||||51|
+31|Move|1070, 660, 0|1|200|Click|||||53|
+32|Left Click|Left, 1, |1|200|Click|||||55|
+33|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||57|
+34|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||58|
+35|Return||1|0|Return|||||60|
+36|[End If]|EndIf|1|0|If_Statement|||||61|
+37|Move|1070, 660, 0|1|200|Click|||||62|
+38|Left Click|Left, 1, |1|200|Click|||||64|
+39|[Text]|/|1|200|SendRaw|||||66|
+40|[Text]|/|1|200|SendRaw|||||68|
+41|[Text]|`,|1|200|SendRaw|||||70|
+42|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||72|
+43|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||73|
+44|Return||1|0|Return|||||75|
+45|[End If]|EndIf|1|0|If_Statement|||||76|
+46|Move|1070, 660, 0|1|200|Click|||||77|
+47|Left Click|Left, 1, |1|200|Click|||||79|
+48|[Text]|/|1|200|SendRaw|||||81|
+49|[Pause]||1|15000|Sleep|||||83|
+50|[Text]|f|1|200|SendRaw|||||84|
+51|Move|949, 683, 0|1|200|Click|||||86|
+52|Left Click|Left, 1, |1|200|Click|||||88|
+53|Left Click|Left, 1, |1|200|Click|||||90|
+54|[Text]|`,|1|200|SendRaw|||||92|
+55|[Text]|`,|1|200|SendRaw|||||94|
+56|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||96|
+57|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||97|
+58|Return||1|0|Return|||||99|
+59|[End If]|EndIf|1|0|If_Statement|||||100|
+60|[Text]|e|1|200|SendRaw|||||101|
+61|Move|594, 935, 0|1|200|Click|||||103|
+62|Left Click|Left, 1, |1|200|Click|||||105|
+63|Left Click|Left, 1, |1|200|Click|||||107|
+64|[Text]|.|1|200|SendRaw|||||109|
+65|[Text]|.|1|200|SendRaw|||||111|
+66|[Text]|.|1|200|SendRaw|||||113|
+67|[Text]|`,|1|200|SendRaw|||||115|
+68|[Text]|`,|1|200|SendRaw|||||117|
+69|[Text]|j|1|200|SendRaw|||||119|
+70|Move|685, 505, 0|1|200|Click|||||121|
+71|Left Click|Left, 1, |1|200|Click|||||123|
+72|Left Click|Left, 1, |1|200|Click|||||125|
+73|[Text]|/|1|200|SendRaw|||||127|
+74|[Text]|/|1|200|SendRaw|||||129|
+75|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||131|
+76|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||132|
+77|Return||1|0|Return|||||134|
+78|[End If]|EndIf|1|0|If_Statement|||||135|
+79|[Text]|1|1|200|SendRaw|||||136|
+80|[FuncReturn]|1|1|0|FuncReturn|||||138|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Sanctuary()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Sanctuary|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|z|1|200|SendRaw|||||4|
+4|Move|980, 954, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|Left Click|Left, 1, |1|200|Click|||||10|
+7|[Text]|`,|1|200|SendRaw|||||12|
+8|[Text]|/|1|200|SendRaw|||||14|
+9|Move|1309, 375, 0|1|200|Click|||||16|
+10|Left Click|Left, 1, |1|200|Click|||Change targeting||18|
+11|[Text]|q|1|200|SendRaw|||||20|
+12|Move|988, 276, 0|1|200|Click|||||22|
+13|Left Click|Left, 1, |1|200|Click|||||24|
+14|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||26|
+15|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||27|
+16|Return||1|0|Return|||||29|
+17|[End If]|EndIf|1|0|If_Statement|||||30|
+18|Move|974, 269, 0|1|200|Click|||||31|
+19|Left Click|Left, 1, |1|200|Click|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|[Text]|/|1|200|SendRaw|||||37|
+22|[Pause]||1|5000|Sleep|||||39|
+23|[Text]|/|1|200|SendRaw|||||40|
+24|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||42|
+25|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||43|
+26|Return||1|0|Return|||||45|
+27|[End If]|EndIf|1|0|If_Statement|||||46|
+28|Move|835, 279, 0|1|200|Click|||||47|
+29|Left Click|Left, 1, |1|200|Click|||||49|
+30|[Text]|.|1|200|SendRaw|||||51|
+31|[Text]|.|1|200|SendRaw|||||53|
+32|Move|768, 925, 0|1|200|Click|||||55|
+33|Left Click|Left, 1, |1|200|Click|||||57|
+34|[Text]|/|1|200|SendRaw|||||59|
+35|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||61|
+36|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||62|
+37|Return||1|0|Return|||||64|
+38|[End If]|EndIf|1|0|If_Statement|||||65|
+39|[Text]|z|1|200|SendRaw|||||66|
+40|Move|862, 945, 0|1|200|Click|||||68|
+41|Left Click|Left, 1, |1|200|Click|||||70|
+42|Left Click|Left, 1, |1|200|Click|||||72|
+43|[Text]|.|1|200|SendRaw|||||74|
+44|[Text]|/|1|200|SendRaw|||||76|
+45|[Text]|.|1|200|SendRaw|||||78|
+46|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||80|
+47|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||81|
+48|Return||1|0|Return|||||83|
+49|[End If]|EndIf|1|0|If_Statement|||||84|
+50|Move|964, 268, 0|1|200|Click|||||85|
+51|Left Click|Left, 1, |1|200|Click|||||87|
+52|[Text]|/|1|200|SendRaw|||||89|
+53|Move|861, 938, 0|1|200|Click|||||91|
+54|Left Click|Left, 1, |1|200|Click|||||93|
+55|[Text]|/|1|200|SendRaw|||||95|
+56|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||97|
+57|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||98|
+58|Return||1|0|Return|||||100|
+59|[End If]|EndIf|1|0|If_Statement|||||101|
+60|Move|861, 932, 0|1|200|Click|||||102|
+61|Left Click|Left, 1, |1|200|Click|||||104|
+62|[Text]|/|1|200|SendRaw|||||106|
+63|Move|934, 905, 0|1|200|Click|||||108|
+64|Left Click|Left, 1, |1|200|Click|||||110|
+65|[Text]|/|1|200|SendRaw|||||112|
+66|[Pause]||1|10000|Sleep|||||114|
+67|[Text]|`,|1|200|SendRaw|||||115|
+68|DeselectTower|_null := |1|0|Function|||||117|
+69|[FuncReturn]|1|1|0|FuncReturn|||||118|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Ravine()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Ravine|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|697, 103, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|1354, 290, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|z|1|200|SendRaw|||||16|
+10|Move|276, 682, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||22|
+13|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||23|
+14|Return||1|0|Return|||||25|
+15|[End If]|EndIf|1|0|If_Statement|||||26|
+16|[Text]|z|1|200|SendRaw|||||27|
+17|Move|748, 809, 0|1|200|Click|||||29|
+18|Left Click|Left, 1, |1|200|Click|||||31|
+19|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||33|
+20|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||34|
+21|Return||1|0|Return|||||36|
+22|[End If]|EndIf|1|0|If_Statement|||||37|
+23|Move|748, 809, 0|1|200|Click|||||38|
+24|Left Click|Left, 1, |1|200|Click|||||40|
+25|[Text]|`,|1|200|SendRaw|||||42|
+26|[Text]|/|1|200|SendRaw|||||44|
+27|Move|1309, 379, 0|1|200|Click|||||46|
+28|Left Click|Left, 1, |1|200|Click|||||48|
+29|DeselectTower|_null := |1|0|Function|||||50|
+30|Move|276, 682, 0|1|200|Click|||||51|
+31|Left Click|Left, 1, |1|200|Click|||||53|
+32|[Text]|.|1|200|SendRaw|||||55|
+33|[Text]|.|1|200|SendRaw|||||57|
+34|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||59|
+35|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||60|
+36|Return||1|0|Return|||||62|
+37|[End If]|EndIf|1|0|If_Statement|||||63|
+38|Move|276, 682, 0|1|200|Click|||||64|
+39|Left Click|Left, 1, |1|200|Click|||||66|
+40|[Text]|/|1|200|SendRaw|||||68|
+41|[Text]|/|1|200|SendRaw|||||70|
+42|DeselectTower|_null := |1|0|Function|||||72|
+43|Move|748, 809, 0|1|200|Click|||||73|
+44|Left Click|Left, 1, |1|200|Click|||||75|
+45|[Text]|/|1|200|SendRaw|||||77|
+46|DeselectTower|_null := |1|0|Function|||||79|
+47|[Text]|z|1|200|SendRaw|||||80|
+48|Move|1353, 980, 0|1|200|Click|||||82|
+49|Left Click|Left, 1, |1|200|Click|||||84|
+50|DeselectTower|_null := |1|0|Function|||||86|
+51|WaitUntilRoundNumber|_null := 20, RoundNumber|1|0|Function|||||87|
+52|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||88|
+53|Return||1|0|Return|||||90|
+54|[End If]|EndIf|1|0|If_Statement|||||91|
+55|Move|748, 809, 0|1|200|Click|||||92|
+56|Left Click|Left, 1, |1|200|Click|||||94|
+57|[Text]|`,|1|200|SendRaw|||||96|
+58|DeselectTower|_null := |1|0|Function|||||98|
+59|[Pause]||1|5000|Sleep|||||99|
+60|[Text]|z|1|200|SendRaw|||||100|
+61|Move|1314, 1025, 0|1|200|Click|||||102|
+62|Left Click|Left, 1, |1|200|Click|||||104|
+63|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||106|
+64|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||107|
+65|Return||1|0|Return|||||109|
+66|[End If]|EndIf|1|0|If_Statement|||||110|
+67|Move|276, 682, 0|1|200|Click|||||111|
+68|Left Click|Left, 1, |1|200|Click|||||113|
+69|[Text]|/|1|200|SendRaw|||||115|
+70|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||117|
+71|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||118|
+72|Return||1|0|Return|||||120|
+73|[End If]|EndIf|1|0|If_Statement|||||121|
+74|Move|748, 809, 0|1|200|Click|||||122|
+75|Left Click|Left, 1, |1|200|Click|||||124|
+76|[Text]|/|1|200|SendRaw|||||126|
+77|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||128|
+78|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||129|
+79|Return||1|0|Return|||||131|
+80|[End If]|EndIf|1|0|If_Statement|||||132|
+81|Move|748, 809, 0|1|200|Click|||||133|
+82|Left Click|Left, 1, |1|200|Click|||||135|
+83|[Text]|/|1|200|SendRaw|||||137|
+84|[Text]|1|1|200|SendRaw|||||139|
+85|[FuncReturn]|1|1|0|FuncReturn|||||141|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|FloodedValley()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|FloodedValley|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|x|1|200|SendRaw|||||4|
+4|Move|1068, 644, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|x|1|200|SendRaw|||||10|
+7|Move|1014, 219, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||16|
+10|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||17|
+11|Return||1|0|Return|||||19|
+12|[End If]|EndIf|1|0|If_Statement|||||20|
+13|[Text]|c|1|200|SendRaw|||||21|
+14|Move|1020, 733, 0|1|200|Click|||||23|
+15|Left Click|Left, 1, |1|200|Click|||||25|
+16|Left Click|Left, 1, |1|200|Click|||||27|
+17|[Text]|.|1|200|SendRaw|||||29|
+18|[Text]|.|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||37|
+22|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||38|
+23|Return||1|0|Return|||||40|
+24|[End If]|EndIf|1|0|If_Statement|||||41|
+25|Move|1068, 644, 0|1|200|Click|||||42|
+26|Left Click|Left, 1, |1|200|Click|||||44|
+27|[Text]|.|1|200|SendRaw|||||46|
+28|[Text]|/|1|200|SendRaw|||||48|
+29|WaitUntilRoundNumber|_null := 20, RoundNumber|1|0|Function|||||50|
+30|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||51|
+31|Return||1|0|Return|||||53|
+32|[End If]|EndIf|1|0|If_Statement|||||54|
+33|Move|1010, 218, 0|1|200|Click|||||55|
+34|Left Click|Left, 1, |1|200|Click|||||57|
+35|[Text]|.|1|200|SendRaw|||||59|
+36|[Text]|/|1|200|SendRaw|||||61|
+37|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||63|
+38|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||64|
+39|Return||1|0|Return|||||66|
+40|[End If]|EndIf|1|0|If_Statement|||||67|
+41|Move|1020, 733, 0|1|200|Click|||||68|
+42|Left Click|Left, 1, |1|200|Click|||||70|
+43|[Text]|.|1|200|SendRaw|||||72|
+44|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||74|
+45|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||75|
+46|Return||1|0|Return|||||77|
+47|[End If]|EndIf|1|0|If_Statement|||||78|
+48|Move|1020, 733, 0|1|200|Click|||||79|
+49|Left Click|Left, 1, |1|200|Click|||||81|
+50|[Text]|.|1|200|SendRaw|||||83|
+51|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||85|
+52|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||86|
+53|Return||1|0|Return|||||88|
+54|[End If]|EndIf|1|0|If_Statement|||||89|
+55|[Text]|1|1|200|SendRaw|||||90|
+56|[FuncReturn]|1|1|0|FuncReturn|||||92|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Infernal()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Infernal|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|x|1|200|SendRaw|||||4|
+4|Move|476, 786, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|x|1|200|SendRaw|||||10|
+7|Move|1187, 268, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|q|1|200|SendRaw|||||16|
+10|Move|838, 693, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||22|
+13|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||23|
+14|Return||1|0|Return|||||25|
+15|[End If]|EndIf|1|0|If_Statement|||||26|
+16|Move|838, 693, 0|1|200|Click|||||27|
+17|Left Click|Left, 1, |1|200|Click|||||29|
+18|[Text]|/|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|[Text]|.|1|200|SendRaw|||||37|
+22|[Pause]||1|5000|Sleep|||||39|
+23|[Text]|.|1|200|SendRaw|||||40|
+24|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||42|
+25|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||43|
+26|Return||1|0|Return|||||45|
+27|[End If]|EndIf|1|0|If_Statement|||||46|
+28|Move|476, 786, 0|1|200|Click|||||47|
+29|Left Click|Left, 1, |1|200|Click|||||49|
+30|[Text]|`,|1|200|SendRaw|||||51|
+31|[Text]|`,|1|200|SendRaw|||||53|
+32|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||55|
+33|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||56|
+34|Return||1|0|Return|||||58|
+35|[End If]|EndIf|1|0|If_Statement|||||59|
+36|Move|1185, 270, 0|1|200|Click|||||60|
+37|Left Click|Left, 1, |1|200|Click|||||62|
+38|[Text]|`,|1|200|SendRaw|||||64|
+39|[Text]|`,|1|200|SendRaw|||||66|
+40|[Text]|/|1|200|SendRaw|||||68|
+41|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||70|
+42|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||71|
+43|Return||1|0|Return|||||73|
+44|[End If]|EndIf|1|0|If_Statement|||||74|
+45|[Text]|z|1|200|SendRaw|||||75|
+46|Move|1544, 652, 0|1|200|Click|||||77|
+47|Left Click|Left, 1, |1|200|Click|||||79|
+48|Left Click|Left, 1, |1|200|Click|||||81|
+49|[Text]|`,|1|200|SendRaw|||||83|
+50|[Text]|`,|1|200|SendRaw|||||85|
+51|[Text]|/|1|200|SendRaw|||||87|
+52|[Text]|/|1|200|SendRaw|||||89|
+53|Move|91, 379, 0|1|200|Click|||||91|
+54|Left Click|Left, 1, |1|200|Click|||||93|
+55|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||95|
+56|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||96|
+57|Return||1|0|Return|||||98|
+58|[End If]|EndIf|1|0|If_Statement|||||99|
+59|Move|1185, 270, 0|1|200|Click|||||100|
+60|Left Click|Left, 1, |1|200|Click|||||102|
+61|[Text]|/|1|200|SendRaw|||||104|
+62|[Text]|/|1|200|SendRaw|||||106|
+63|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||108|
+64|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||109|
+65|Return||1|0|Return|||||111|
+66|[End If]|EndIf|1|0|If_Statement|||||112|
+67|Move|1185, 270, 0|1|200|Click|||||113|
+68|Left Click|Left, 1, |1|200|Click|||||115|
+69|[Text]|/|1|200|SendRaw|||||117|
+70|DeselectTower|_null := |1|0|Function|||||119|
+71|[Text]|q|1|200|SendRaw|||||120|
+72|Move|834, 386, 0|1|200|Click|||||122|
+73|Left Click|Left, 1, |1|200|Click|||||124|
+74|Left Click|Left, 1, |1|200|Click|||||126|
+75|[Text]|/|1|200|SendRaw|||||128|
+76|[Text]|/|1|200|SendRaw|||||130|
+77|[Text]|/|1|200|SendRaw|||||132|
+78|[Pause]||1|5000|Sleep|||||134|
+79|[Text]|.|1|200|SendRaw|||||135|
+80|[Text]|.|1|200|SendRaw|||||137|
+81|DeselectTower|_null := |1|0|Function|||||139|
+82|[FuncReturn]|1|1|0|FuncReturn|||||140|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|BloodyPuddles()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|BloodyPuddles|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|x|1|200|SendRaw|||||4|
+4|Move|266, 407, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|1276, 567, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|x|1|200|SendRaw|||||16|
+10|Move|1200, 190, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|[Text]|x|1|200|SendRaw|||||22|
+13|Move|641, 625, 0|1|200|Click|||||24|
+14|Left Click|Left, 1, |1|200|Click|||||26|
+15|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||28|
+16|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||29|
+17|Return||1|0|Return|||||31|
+18|[End If]|EndIf|1|0|If_Statement|||||32|
+19|Move|647, 621, 0|1|200|Click|||||33|
+20|Left Click|Left, 1, |1|200|Click|||||35|
+21|[Text]|`,|1|200|SendRaw|||||37|
+22|[Text]|`,|1|200|SendRaw|||||39|
+23|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||41|
+24|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||42|
+25|Return||1|0|Return|||||44|
+26|[End If]|EndIf|1|0|If_Statement|||||45|
+27|Move|647, 621, 0|1|200|Click|||||46|
+28|Left Click|Left, 1, |1|200|Click|||||48|
+29|[Text]|/|1|200|SendRaw|||||50|
+30|DeselectTower|_null := |1|0|Function|||||52|
+31|Move|1193, 193, 0|1|200|Click|||||53|
+32|Left Click|Left, 1, |1|200|Click|||||55|
+33|[Text]|`,|1|200|SendRaw|||||57|
+34|[Text]|`,|1|200|SendRaw|||||59|
+35|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||61|
+36|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||62|
+37|Return||1|0|Return|||||64|
+38|[End If]|EndIf|1|0|If_Statement|||||65|
+39|[Text]|z|1|200|SendRaw|||||66|
+40|Move|728, 266, 0|1|200|Click|||||68|
+41|Left Click|Left, 1, |1|200|Click|||||70|
+42|Left Click|Left, 1, |1|200|Click|||||72|
+43|[Text]|`,|1|200|SendRaw|||||74|
+44|[Text]|/|1|200|SendRaw|||||76|
+45|Move|1308, 377, 0|1|200|Click|||||78|
+46|Left Click|Left, 1, |1|200|Click|||||80|
+47|DeselectTower|_null := |1|0|Function|||||82|
+48|[Text]|u|1|200|SendRaw|||||83|
+49|Move|837, 415, 0|1|200|Click|||||85|
+50|Left Click|Left, 1, |1|200|Click|||||87|
+51|WaitUntilRoundNumber|_null := 20, RoundNumber|1|0|Function|||||89|
+52|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||90|
+53|Return||1|0|Return|||||92|
+54|[End If]|EndIf|1|0|If_Statement|||||93|
+55|Move|1276, 567, 0|1|200|Click|||||94|
+56|Left Click|Left, 1, |1|200|Click|||||96|
+57|[Text]|/|1|200|SendRaw|||||98|
+58|[Text]|/|1|200|SendRaw|||||100|
+59|[Text]|q|1|200|SendRaw|||||102|
+60|Move|464, 318, 0|1|200|Click|||||104|
+61|Left Click|Left, 1, |1|200|Click|||||106|
+62|Left Click|Left, 1, |1|200|Click|||||108|
+63|[Text]|/|1|200|SendRaw|||||110|
+64|[Text]|/|1|200|SendRaw|||||112|
+65|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||114|
+66|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||115|
+67|Return||1|0|Return|||||117|
+68|[End If]|EndIf|1|0|If_Statement|||||118|
+69|Move|632, 631, 0|1|200|Click|||||119|
+70|Left Click|Left, 1, |1|200|Click|||||121|
+71|[Text]|/|1|200|SendRaw|||||123|
+72|[Text]|/|1|200|SendRaw|||||125|
+73|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||127|
+74|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||128|
+75|Return||1|0|Return|||||130|
+76|[End If]|EndIf|1|0|If_Statement|||||131|
+77|Move|728, 266, 0|1|200|Click|||||132|
+78|Left Click|Left, 1, |1|200|Click|||||134|
+79|[Text]|`,|1|200|SendRaw|||||136|
+80|[Text]|/|1|200|SendRaw|||||138|
+81|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||140|
+82|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||141|
+83|Return||1|0|Return|||||143|
+84|[End If]|EndIf|1|0|If_Statement|||||144|
+85|Move|632, 631, 0|1|200|Click|||||145|
+86|Left Click|Left, 1, |1|200|Click|||||147|
+87|[Text]|/|1|200|SendRaw|||||149|
+88|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||151|
+89|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||152|
+90|Return||1|0|Return|||||154|
+91|[End If]|EndIf|1|0|If_Statement|||||155|
+92|[Text]|1|1|200|SendRaw|||||156|
+93|[FuncReturn]|1|1|0|FuncReturn|||||158|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Workshop()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Workshop|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|118, 628, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|566, 501, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||16|
+10|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||17|
+11|Return||1|0|Return|||||19|
+12|[End If]|EndIf|1|0|If_Statement|||||20|
+13|[Text]|a|1|200|SendRaw|||||21|
+14|Move|63, 676, 0|1|200|Click|||||23|
+15|Left Click|Left, 1, |1|200|Click|||||25|
+16|Left Click|Left, 1, |1|200|Click|||||27|
+17|[Text]|.|1|200|SendRaw|||||29|
+18|[Text]|.|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||37|
+22|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||38|
+23|Return||1|0|Return|||||40|
+24|[End If]|EndIf|1|0|If_Statement|||||41|
+25|Move|63, 676, 0|1|200|Click|||||42|
+26|Left Click|Left, 1, |1|200|Click|||||44|
+27|[Text]|/|1|200|SendRaw|||||46|
+28|[Text]|/|1|200|SendRaw|||||48|
+29|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||50|
+30|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||51|
+31|Return||1|0|Return|||||53|
+32|[End If]|EndIf|1|0|If_Statement|||||54|
+33|[Text]|e|1|200|SendRaw|||||55|
+34|Move|646, 486, 0|1|200|Click|||||57|
+35|Left Click|Left, 1, |1|200|Click|||||59|
+36|Left Click|Left, 1, |1|200|Click|||||61|
+37|[Text]|.|1|200|SendRaw|||||63|
+38|[Text]|.|1|200|SendRaw|||||65|
+39|[Text]|/|1|200|SendRaw|||||67|
+40|[Text]|/|1|200|SendRaw|||||69|
+41|[Text]|.|1|200|SendRaw|||||71|
+42|[Pause]||1|5000|Sleep|||||73|
+43|[Text]|.|1|200|SendRaw|||||74|
+44|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||76|
+45|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||77|
+46|Return||1|0|Return|||||79|
+47|[End If]|EndIf|1|0|If_Statement|||||80|
+48|[Text]|2|1|200|SendRaw|||||81|
+49|[FuncReturn]|1|1|0|FuncReturn|||||83|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Quad()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Quad|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|1284, 556, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|399, 515, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|c|1|200|SendRaw|||||16|
+10|Move|834, 561, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||22|
+13|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||23|
+14|Return||1|0|Return|||||25|
+15|[End If]|EndIf|1|0|If_Statement|||||26|
+16|Move|834, 561, 0|1|200|Click|||||27|
+17|Left Click|Left, 1, |1|200|Click|||||29|
+18|[Text]|.|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||35|
+21|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||36|
+22|Return||1|0|Return|||||38|
+23|[End If]|EndIf|1|0|If_Statement|||||39|
+24|Move|834, 561, 0|1|200|Click|||||40|
+25|Left Click|Left, 1, |1|200|Click|||||42|
+26|[Text]|.|1|200|SendRaw|||||44|
+27|[Text]|.|1|200|SendRaw|||||46|
+28|[Text]|/|1|200|SendRaw|||||48|
+29|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||50|
+30|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||51|
+31|Return||1|0|Return|||||53|
+32|[End If]|EndIf|1|0|If_Statement|||||54|
+33|[Text]|z|1|200|SendRaw|||||55|
+34|Move|829, 833, 0|1|200|Click|||||57|
+35|Left Click|Left, 1, |1|200|Click|||||59|
+36|Left Click|Left, 1, |1|200|Click|||||61|
+37|[Text]|.|1|200|SendRaw|||||63|
+38|[Text]|.|1|200|SendRaw|||||65|
+39|[Text]|/|1|200|SendRaw|||||67|
+40|[Text]|/|1|200|SendRaw|||||69|
+41|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||71|
+42|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||72|
+43|Return||1|0|Return|||||74|
+44|[End If]|EndIf|1|0|If_Statement|||||75|
+45|Move|829, 833, 0|1|200|Click|||||76|
+46|Left Click|Left, 1, |1|200|Click|||||78|
+47|[Text]|/|1|200|SendRaw|||||80|
+48|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||82|
+49|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||83|
+50|Return||1|0|Return|||||85|
+51|[End If]|EndIf|1|0|If_Statement|||||86|
+52|Move|834, 561, 0|1|200|Click|||||87|
+53|Left Click|Left, 1, |1|200|Click|||||89|
+54|[Pause]||1|12000|Sleep|||||91|
+55|[Text]|.|1|200|SendRaw|||||92|
+56|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||94|
+57|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||95|
+58|Return||1|0|Return|||||97|
+59|[End If]|EndIf|1|0|If_Statement|||||98|
+60|[Text]|2|1|200|SendRaw|||||99|
+61|[FuncReturn]|1|1|0|FuncReturn|||||101|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|DarkCastle()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|DarkCastle|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|u|1|200|SendRaw|||||4|
+4|Move|847, 661, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|758, 448, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||16|
+10|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||17|
+11|Return||1|0|Return|||||19|
+12|[End If]|EndIf|1|0|If_Statement|||||20|
+13|[Text]|z|1|200|SendRaw|||||21|
+14|Move|1454, 539, 0|1|200|Click|||||23|
+15|Left Click|Left, 1, |1|200|Click|||||25|
+16|Left Click|Left, 1, |1|200|Click|||||27|
+17|[Text]|.|1|200|SendRaw|||||29|
+18|[Text]|.|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|[Text]|/|1|200|SendRaw|||||35|
+21|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||37|
+22|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||38|
+23|Return||1|0|Return|||||40|
+24|[End If]|EndIf|1|0|If_Statement|||||41|
+25|[Text]|z|1|200|SendRaw|||||42|
+26|Move|1453, 454, 0|1|200|Click|||||44|
+27|Left Click|Left, 1, |1|200|Click|||||46|
+28|Left Click|Left, 1, |1|200|Click|||||48|
+29|[Text]|`,|1|200|SendRaw|||||50|
+30|[Text]|`,|1|200|SendRaw|||||52|
+31|[Text]|/|1|200|SendRaw|||||54|
+32|[Text]|/|1|200|SendRaw|||||56|
+33|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||58|
+34|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||59|
+35|Return||1|0|Return|||||61|
+36|[End If]|EndIf|1|0|If_Statement|||||62|
+37|Move|1454, 539, 0|1|200|Click|||||63|
+38|Left Click|Left, 1, |1|200|Click|||||65|
+39|[Text]|/|1|200|SendRaw|||||67|
+40|DeselectTower|_null := |1|0|Function|||||69|
+41|Move|1453, 454, 0|1|200|Click|||||70|
+42|Left Click|Left, 1, |1|200|Click|||||72|
+43|[Text]|/|1|200|SendRaw|||||74|
+44|DeselectTower|_null := |1|0|Function|||||76|
+45|[FuncReturn]|1|1|0|FuncReturn|||||77|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|MuddyPuddles()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|MuddyPuddles|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|x|1|200|SendRaw|||||4|
+4|Move|341, 446, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|q|1|200|SendRaw|||||10|
+7|Move|886, 264, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|x|1|200|SendRaw|||||16|
+10|Move|1363, 448, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|[Text]|x|1|200|SendRaw|||||22|
+13|Move|625, 675, 0|1|200|Click|||||24|
+14|Left Click|Left, 1, |1|200|Click|||||26|
+15|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||28|
+16|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||29|
+17|Return||1|0|Return|||||31|
+18|[End If]|EndIf|1|0|If_Statement|||||32|
+19|Move|634, 668, 0|1|200|Click|||||33|
+20|Left Click|Left, 1, |1|200|Click|||||35|
+21|[Text]|`,|1|200|SendRaw|||||37|
+22|[Text]|`,|1|200|SendRaw|||||39|
+23|WaitUntilRoundNumber|_null := 10, RoundNumber|1|0|Function|||||41|
+24|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||42|
+25|Return||1|0|Return|||||44|
+26|[End If]|EndIf|1|0|If_Statement|||||45|
+27|Move|634, 668, 0|1|200|Click|||||46|
+28|Left Click|Left, 1, |1|200|Click|||||48|
+29|[Text]|/|1|200|SendRaw|||||50|
+30|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||52|
+31|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||53|
+32|Return||1|0|Return|||||55|
+33|[End If]|EndIf|1|0|If_Statement|||||56|
+34|[Text]|q|1|200|SendRaw|||||57|
+35|Move|559, 461, 0|1|200|Click|||||59|
+36|Left Click|Left, 1, |1|200|Click|||||61|
+37|Left Click|Left, 1, |1|200|Click|||||63|
+38|[Text]|/|1|200|SendRaw|||||65|
+39|[Text]|/|1|200|SendRaw|||||67|
+40|[Text]|q|1|200|SendRaw|||||69|
+41|Move|1093, 704, 0|1|200|Click|||||71|
+42|Left Click|Left, 1, |1|200|Click|||||73|
+43|Left Click|Left, 1, |1|200|Click|||||75|
+44|[Text]|/|1|200|SendRaw|||||77|
+45|[Text]|/|1|200|SendRaw|||||79|
+46|WaitUntilRoundNumber|_null := 20, RoundNumber|1|0|Function|||||81|
+47|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||82|
+48|Return||1|0|Return|||||84|
+49|[End If]|EndIf|1|0|If_Statement|||||85|
+50|Move|634, 668, 0|1|200|Click|||||86|
+51|Left Click|Left, 1, |1|200|Click|||||88|
+52|[Text]|/|1|200|SendRaw|||||90|
+53|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||92|
+54|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||93|
+55|Return||1|0|Return|||||95|
+56|[End If]|EndIf|1|0|If_Statement|||||96|
+57|[Text]|z|1|200|SendRaw|||||97|
+58|Move|1488, 696, 0|1|200|Click|||||99|
+59|Left Click|Left, 1, |1|200|Click|||||101|
+60|Left Click|Left, 1, |1|200|Click|||||103|
+61|[Text]|`,|1|200|SendRaw|||||105|
+62|[Text]|`,|1|200|SendRaw|||||107|
+63|[Text]|/|1|200|SendRaw|||||109|
+64|[Text]|/|1|200|SendRaw|||||111|
+65|Move|88, 378, 0|1|200|Click|||||113|
+66|Left Click|Left, 1, |1|200|Click|||||115|
+67|WaitUntilRoundNumber|_null := 30, RoundNumber|1|0|Function|||||117|
+68|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||118|
+69|Return||1|0|Return|||||120|
+70|[End If]|EndIf|1|0|If_Statement|||||121|
+71|Move|634, 668, 0|1|200|Click|||||122|
+72|Left Click|Left, 1, |1|200|Click|||||124|
+73|[Text]|/|1|200|SendRaw|||||126|
+74|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||128|
+75|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||129|
+76|Return||1|0|Return|||||131|
+77|[End If]|EndIf|1|0|If_Statement|||||132|
+78|Move|634, 668, 0|1|200|Click|||||133|
+79|Left Click|Left, 1, |1|200|Click|||||135|
+80|[Text]|/|1|200|SendRaw|||||137|
+81|DeselectTower|_null := |1|0|Function|||||139|
+82|[FuncReturn]|1|1|0|FuncReturn|||||140|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|Ouch()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|Ouch|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|RoundNumber := 1|1|0|Variable|Expression||||3|
+3|[Text]|c|1|200|SendRaw|||||4|
+4|Move|857, 565, 0|1|200|Click|||||6|
+5|Left Click|Left, 1, |1|200|Click|||||8|
+6|[Text]|u|1|200|SendRaw|||||10|
+7|Move|556, 316, 0|1|200|Click|||||12|
+8|Left Click|Left, 1, |1|200|Click|||||14|
+9|[Text]|q|1|200|SendRaw|||||16|
+10|Move|1006, 665, 0|1|200|Click|||||18|
+11|Left Click|Left, 1, |1|200|Click|||||20|
+12|WaitUntilRoundNumber|_null := 5, RoundNumber|1|0|Function|||||22|
+13|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||23|
+14|Return||1|0|Return|||||25|
+15|[End If]|EndIf|1|0|If_Statement|||||26|
+16|Move|858, 559, 0|1|200|Click|||||27|
+17|Left Click|Left, 1, |1|200|Click|||||29|
+18|[Text]|.|1|200|SendRaw|||||31|
+19|[Text]|/|1|200|SendRaw|||||33|
+20|WaitUntilRoundNumber|_null := 15, RoundNumber|1|0|Function|||||35|
+21|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||36|
+22|Return||1|0|Return|||||38|
+23|[End If]|EndIf|1|0|If_Statement|||||39|
+24|[Text]|z|1|200|SendRaw|||||40|
+25|Move|1139, 768, 0|1|200|Click|||||42|
+26|Left Click|Left, 1, |1|200|Click|||||44|
+27|Left Click|Left, 1, |1|200|Click|||||46|
+28|[Text]|.|1|200|SendRaw|||||48|
+29|[Text]|/|1|200|SendRaw|||||50|
+30|[Text]|.|1|200|SendRaw|||||52|
+31|[Text]|/|1|200|SendRaw|||||54|
+32|WaitUntilRoundNumber|_null := 25, RoundNumber|1|0|Function|||||56|
+33|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||57|
+34|Return||1|0|Return|||||59|
+35|[End If]|EndIf|1|0|If_Statement|||||60|
+36|[Text]|z|1|200|SendRaw|||||61|
+37|Move|1486, 664, 0|1|200|Click|||||63|
+38|Left Click|Left, 1, |1|200|Click|||||65|
+39|Left Click|Left, 1, |1|200|Click|||||67|
+40|[Text]|`,|1|200|SendRaw|||||69|
+41|[Text]|`,|1|200|SendRaw|||||71|
+42|[Text]|/|1|200|SendRaw|||||73|
+43|[Text]|/|1|200|SendRaw|||||75|
+44|Move|88, 378, 0|1|200|Click|||||77|
+45|Left Click|Left, 1, |1|200|Click|||||79|
+46|WaitUntilRoundNumber|_null := 35, RoundNumber|1|0|Function|||||81|
+47|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||82|
+48|Return||1|0|Return|||||84|
+49|[End If]|EndIf|1|0|If_Statement|||||85|
+50|[Pause]||1|10000|Sleep|||||86|
+51|Move|856, 562, 0|1|200|Click|||||87|
+52|Left Click|Left, 1, |1|200|Click|||||89|
+53|[Text]|.|1|200|SendRaw|||||91|
+54|[Text]|.|1|200|SendRaw|||||93|
+55|[Text]|.|1|200|SendRaw|||||95|
+56|[Text]|/|1|200|SendRaw|||||97|
+57|WaitUntilRoundNumber|_null := 40, RoundNumber|1|0|Function|||||99|
+58|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||100|
+59|Return||1|0|Return|||||102|
+60|[End If]|EndIf|1|0|If_Statement|||||103|
+61|[Text]|2|1|200|SendRaw|||||104|
+62|[FuncReturn]|1|1|0|FuncReturn|||||106|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|DetermineRound()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|RoundNumber|1|0|FuncParameter|ByRef||||1|
+2|[FunctionStart]|DetermineRound|1|0|UserFunction|Local| / |||1|
+3|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105114901.png|1|0|ImageSearch||Window|||3|
+4|If Image/Pixel Found||1|0|If_Statement|||||5|
+5|[Assign Variable]|RoundNumber := 5|1|0|Variable|Expression||||7|
+6|[End If]|EndIf|1|0|If_Statement|||||8|
+7|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105115652.png|1|0|ImageSearch||Window|||9|
+8|If Image/Pixel Found||1|0|If_Statement|||||11|
+9|[Assign Variable]|RoundNumber := 10|1|0|Variable|Expression||||13|
+10|[End If]|EndIf|1|0|If_Statement|||||14|
+11|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105120249.png|1|0|ImageSearch||Window|||15|
+12|If Image/Pixel Found||1|0|If_Statement|||||17|
+13|[Assign Variable]|RoundNumber := 15|1|0|Variable|Expression||||19|
+14|[End If]|EndIf|1|0|If_Statement|||||20|
+15|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105120519.png|1|0|ImageSearch||Window|||21|
+16|If Image/Pixel Found||1|0|If_Statement|||||23|
+17|[Assign Variable]|RoundNumber := 20|1|0|Variable|Expression||||25|
+18|[End If]|EndIf|1|0|If_Statement|||||26|
+19|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105120739.png|1|0|ImageSearch||Window|||27|
+20|If Image/Pixel Found||1|0|If_Statement|||||29|
+21|[Assign Variable]|RoundNumber := 25|1|0|Variable|Expression||||31|
+22|[End If]|EndIf|1|0|If_Statement|||||32|
+23|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105120956.png|1|0|ImageSearch||Window|||33|
+24|If Image/Pixel Found||1|0|If_Statement|||||35|
+25|[Assign Variable]|RoundNumber := 30|1|0|Variable|Expression||||37|
+26|[End If]|EndIf|1|0|If_Statement|||||38|
+27|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105121219.png|1|0|ImageSearch||Window|||39|
+28|If Image/Pixel Found||1|0|If_Statement|||||41|
+29|[Assign Variable]|RoundNumber := 35|1|0|Variable|Expression||||43|
+30|[End If]|EndIf|1|0|If_Statement|||||44|
+31|Continue, Continue, RoundX, RoundY, 0|1406, 21, 1509, 75, *50 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240105121453.png|1|0|ImageSearch||Window|||45|
+32|If Image/Pixel Found||1|0|If_Statement|||||47|
+33|[Assign Variable]|RoundNumber := 40|1|0|Variable|Expression||||49|
+34|[End If]|EndIf|1|0|If_Statement|||||50|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|DeselectTower()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|DeselectTower|1|0|UserFunction|Local| / |||1|
+2|Move|571, 138, 0|1|200|Click|||||3|
+3|Left Click|Left, 1, |1|200|Click|||||5|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|PressSpacebar()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|PressSpacebar|1|0|UserFunction|Local| / |||1|
+2|[Text]| |1|200|SendRaw|||||3|
+3|[Text]| |1|200|SendRaw|||||5|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|WaitUntilRoundNumber()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|WaitUntilRound|1|0|FuncParameter|||||1|
+2|[FuncParameter]|RoundNumber|1|0|FuncParameter|ByRef||||1|
+3|[FunctionStart]|WaitUntilRoundNumber|1|0|UserFunction|Local| / |||1|
+4|[Assign Variable]|failed := 0|1|0|Variable|Expression||||3|
+5|DeselectTower|_null := |1|0|Function|||||4|
+6|[LoopStart]|RoundNumber < WaitUntilRound|1|0|While|||||5|
+7|[Pause]||1|2000|Sleep|||||7|
+8|DetermineRound|_null := RoundNumber|1|0|Function|||||8|
+9|CheckLevelUp|_null := |1|0|Function|||||9|
+10|CheckFailure|_null := failed|1|0|Function|||||10|
+11|Compare Variables|failed = 1|1|0|If_Statement|||||11|
+12|[Assign Variable]|RoundNumber := 41|1|0|Variable|Expression||||13|
+13|Break||1|0|Break|||Would want to return to start from here||14|
+14|[End If]|EndIf|1|0|If_Statement|||||15|
+15|[LoopEnd]|LoopEnd|1|0|Loop|||||16|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|CheckSuccess()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|CheckSuccess|1|0|UserFunction|Local| / |||1|
+2|[Assign Variable]|SuccessX := 0|1|0|Variable|Expression||||3|
+3|[LoopStart]|LoopStart|80|0|Loop|||||4|
+4|Break, Continue, SuccessX, SuccessY, 0|736, 158, 770, 188, *10 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240104130034.png|1|0|ImageSearch||Window|||6|
+5|[Pause]||1|2000|Sleep|||||10|
+6|[LoopEnd]|LoopEnd|1|0|Loop|||||11|
+7|Compare Variables|SuccessX > 1|1|0|If_Statement|||||12|
+8|[Assign Variable]|SuccessX := 0|1|0|Variable|Expression||||14|
+9|ResolveSuccess|_null := |1|0|Function|||||15|
+10|Return||1|0|Return|||||16|
+11|[End If]|EndIf|1|0|If_Statement|||||17|
+12|CheckFailure|_null := |1|0|Function|||||18|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|ResolveSuccess()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|ResolveSuccess|1|0|UserFunction|Local| / |||1|
+2|[Pause]||1|500|Sleep|||||3|
+3|Left Move & Click|953, 910 Left, 1|1|1000|Click|||||4|
+4|Left Move & Click|719, 850 Left, 1|1|1000|Click|||||6|
+5|Compare Variables|RoundNumber = 41|1|0|If_Statement|||||8|
+6|Return||1|0|Return|||||10|
+7|[End If]|EndIf|1|0|If_Statement|||||11|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|CheckFailure()
+Context=None|
+Groups=Start:1
+1|[FuncParameter]|failed := 0|1|0|FuncParameter|ByRef||||1|
+2|[FunctionStart]|CheckFailure|1|0|UserFunction|Local| / |||1|
+3|[Assign Variable]|DefeatX := 0|1|0|Variable|Expression||||3|
+4|Continue, Continue, DefeatX, DefeatY, 0|831, 312, 871, 350, *5 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240104155429.png|1|0|ImageSearch||Window|||4|
+5|Compare Variables|DefeatX > 1|1|0|If_Statement|||||6|
+6|[Assign Variable]|DefeatX := 0|1|0|Variable|Expression||||8|
+7|ResolveFailure|_null := |1|0|Function|||||9|
+8|[Assign Variable]|failed := 1|1|0|Variable|Expression||||10|
+9|[End If]|EndIf|1|0|If_Statement|||||11|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|ResolveFailure()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|ResolveFailure|1|0|UserFunction|Local| / |||1|
+2|[Pause]||1|500|Sleep|||||3|
+3|Left Move & Click|628, 812 Left, 1|1|1000|Click|||||4|
+
+[PMC Code v5.4.1]|||1|Window,2,Fast,0,1,Input,-1,-1,1|1|CheckLevelUp()
+Context=None|
+Groups=Start:1
+1|[FunctionStart]|CheckLevelUp|1|0|UserFunction|Local| / |||1|
+2|Continue, Continue, FoundX, FoundY, 0|833, 549, 899, 596, *10 C:\Users\lturt\AppData\Roaming\MacroCreator\Screenshots\Screen_20240106105307.png|1|0|ImageSearch||Window|||3|
+3|If Image/Pixel Found||1|0|If_Statement|||||5|
+4|Move|961, 507, 0|1|200|Click|||||7|
+5|Left Click|Left, 1, |1|300|Click|||||9|
+6|Left Click|Left, 1, |1|300|Click|||||11|
+7|[End If]|EndIf|1|0|If_Statement|||||13|
+
